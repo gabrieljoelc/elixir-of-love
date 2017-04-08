@@ -56,3 +56,9 @@ config :logger, level: :info
 config :hello_world, HelloWorld.Endpoint, server: true
 #
 
+config :hello_world, HelloWorld.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  username: "postgres",
+  password: "postgres",
+  database: "hello_world",
+  hostname: "${DB_HOST}"
