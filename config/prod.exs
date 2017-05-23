@@ -59,3 +59,10 @@ config :logger, level: :info
 # Finally import the config/prod.secret.exs
 # which should be versioned separately.
 import_config "prod.secret.exs"
+
+config :nomad,
+  cloud_provider: :gcl
+
+config :goth, 
+  json: "config/creds.json" |> Path.expand |> File.read!
+
